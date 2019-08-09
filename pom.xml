@@ -139,6 +139,37 @@
 				</repository>
 			</distributionManagement>
 		</profile>
+		<profile>
+			<id>dev_ly</id>
+			<activation>
+				<activeByDefault>true</activeByDefault>
+			</activation>
+			<distributionManagement>
+				<repository>
+					<id>hfintech-snapshots</id>
+					<url>http://47.97.205.187/nexus/content/repositories/hfintech-releases/</url>
+				</repository>
+				<snapshotRepository>
+					<id>hfintech-releases</id>
+					<url>http://47.97.205.187/nexus/content/repositories/hfintech-snapshots/</url>
+				</snapshotRepository>
+			</distributionManagement>
+			<build>
+				<plugins>
+					<plugin>
+						<groupId>org.apache.maven.plugins</groupId>
+						<artifactId>maven-source-plugin</artifactId>
+						<executions>
+							<execution>
+								<id>attach-sources</id>
+								<goals>
+									<goal>jar</goal>
+								</goals>
+							</execution>
+						</executions>
+					</plugin>
+				</plugins>
+			</build>
+		</profile>
 	</profiles>
-
 </project>
